@@ -1,0 +1,42 @@
+<main>
+    <div class="cover text-center">
+        <h1 class="header-title text-center">Dayz Musiq Productions</h1>
+    </div>
+    <div class="container">
+        <% colors = %w|#f3cbdd #d1c1f1 #b5f1d2| %>
+        <% @songs.each do |song| %> 
+            <div class="row" style="background-color: <%= colors.sample %>";>
+                <div class="col-sm-4 text-center">
+                    <h2 class="song-title"><%= song.song_title %></h2>
+                    <p>BPM : <%= song.song_bpm %></p>
+                    <p><%= song.song_time %></p>
+                    <p><%= song.song_genre %></p>
+                    <p><%= link_to "GET THIS TRACK ♪", song_path(song.song_id) %></p>
+                </div>
+                <div class="col-sm-8 youtube-wrapper">
+                    <iframe src="https://www.youtube.com/embed/<%= song.youtube_video_id %>" frameborder="0" 
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        <% end %>
+    </div>
+    <section>
+        <h2 class="service-title text-center">Service</h2>
+        <div class="container">
+            <h3>Free Download</h3>
+            <ul>
+                <li>YouTubeなどの動画BGMとしてお使い下さい。</li>
+                <li>使用の際は必ずDayz MusiqのYouTubeまたは<br>instagramアカウントのURLを概要欄にて紹介して下さい。</li>
+            </ul>
+            <h3>SongWriting</h3>
+            <ul>
+                <li>あなただけのオリジナルソングを提供します。</li>
+                <li>インストゥルメント・歌モノどちらも可能です。</li>
+                <li>動画のオープニングやエンディング曲としてお使い頂ける��、<br>あなたの音楽活動をサポートします。</li>
+                <li>ご希望の方は【お問い合わせ】からご連絡ください。</li>
+            </ul>
+        </div>
+    </section>
+</main>

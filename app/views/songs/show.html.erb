@@ -1,0 +1,19 @@
+<div class="container">
+    <% color = %w|#f3cbdd #d1c1f1 #b5f1d2| %>
+        <div class="row" style="background-color: <%= color.sample %>";>
+            <div class="col-sm-4 text-center">
+                <h2 class="song-title"><%= @song.song_title %></h2>
+                <p>BPM : <%= @song.song_bpm %></p>
+                <p><%= @song.song_time %></p>
+                <p><%= @song.song_genre %></p>
+                <p><%= button_to 'Download', download_song_path(@song.song_id), method: :get, class: 'btn btn-info' %></p>
+            </div>
+            <div class="col-sm-8 youtube-wrapper">
+                <iframe src="https://www.youtube.com/embed/<%= @song.youtube_video_id %>" frameborder="0" 
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+                </iframe>
+            </div>
+            <
+        </div>
+</div>

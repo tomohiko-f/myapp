@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  song_id: 1
+  song_title: MyString
+  song_time: 2019-06-16 11:45:57
+  song_bpm: 1
+  song_genre: MyString
+  youtube_video_id: MyString
+
+two:
+  song_id: 1
+  song_title: MyString
+  song_time: 2019-06-16 11:45:57
+  song_bpm: 1
+  song_genre: MyString
+  youtube_video_id: MyString
