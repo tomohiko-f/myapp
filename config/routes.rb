@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
+  :registrations => 'users/registrations',
   sessions: 'users/sessions'
   }
   
@@ -7,7 +8,7 @@ Rails.application.routes.draw do
     member do
       get :download
     end
-    resources :comments, only: [:create, :delete]
+    resources :comments, only: [:create, :destroy]
   end
   
   root "songs#index"

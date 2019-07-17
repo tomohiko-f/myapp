@@ -1,58 +1,142 @@
-// Place all the styles related to the Songs controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.header {
+    background-color: #080a0c3d;
+    margin: 0;
+}
 
+.header h1 {
+    font-size: 40px;
+}
 
-.cover {
-    // background: url();
+.main-header, .overlay:before {
+    background: image-url('dayz-image1.jpg') no-repeat;
     background-size: cover;
-    padding-top: 5%;
-    padding-bottom: 5%;
+    background-position: 0 -21px;
+}
+
+.main-header {
+    padding:15%;
+}
+
+.overlay {
+    max-height: 200px;
+    margin: 0px auto;
+    max-width: 768px;
+    overflow: hidden;
+    padding: 20px;
+    position: relative;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Lato';
+    position: relative;
+    text-align: center;
+    z-index: 0;
+    &:before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        filter: blur(60px);
+        z-index: -1;
+    }
 }
 
 .header-title {
-    font-size: 50px;
+    font-size: 55px;
 }
 
 .row {
-    max-width: 800px;
+    max-width: 1000px;
+    margin: 3% auto;
+    padding: 30px;
+}
+
+.song-bg {
     width: 100%;
-    margin: 5% auto;
+    height: 100%;
+    background: image-url('dayz-image2.jpg');
+    background-size: cover;
+    border-radius: 20px;
+    position: relative;
+    z-index: 0;
+    &:before {
+        content: '';
+        position: absolute;
+        top: -5px;
+        bottom: -5px;
+        left: -5px;
+        right: -5px;
+        background: inherit;
+        filter: blur(10px);
+        z-index: -1;
+    }
 }
 
 .song-title {
-    margin-bottom: 3%;
-}
-
-.youtube-wrapper {
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 30px; 
-    height: 0; overflow: hidden;
-}
-
-
-.youtube-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-section {
-    background-color: #66717b;
     color: #fff;
-    padding-top: 5%;
-    padding-bottom: 5%;
-    
+    font-size: 32px;
+    padding-bottom: 8%;
+}
+
+.song-bg p {
+    color: #fff;
+    font-size: 19px;
+    line-height: 30px;
+    padding-bottom: 2%;
+}
+
+.col-sm-4 .btn {
+    margin-top: 30%;
+}
+
+.service-container {
+    background-color: #66717b;
+    background-size: cover;
+    color: #fff;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.service-container .row {
+    margin: 2% auto;
+    padding: 30px;
+}
+
+.service-container .col-sm-6 {
+    background-color: #83919c;
 }
 
 .service-title {
-   margin-bottom: 5%; 
+    font-size: 35px;
+    margin-bottom: 5%; 
 }
 
-li {
-    margin-bottom: 8px;
+.service-container h2 {
+    font-size: 20px;
+    padding-top: 5%;
+    padding-bottom: 2%;
+    text-decoration: underline;
 }
 
+.service-container ul {
+    width: 110%;
+    margin: 10px;
+}
+
+.service-container li {
+    margin-bottom: 5px;
+}
+
+.comment p {
+    margin-bottom: 2%;
+}
+
+.comment-box {
+    width: 500px;
+    height: 30px;
+    font-size: 16px;
+    border: none;
+    outline: 0;
+    border-bottom: 1px solid #abb3b9;
+}
