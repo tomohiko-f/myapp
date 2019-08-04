@@ -1,21 +1,33 @@
 <header>
     <div class="header">
-        <nav class="navbar navbar-expand-sm navbar-light">
-            <h1><%= link_to 'Dayz Musiq', songs_path %></h1>
-            <button class="navbar-toggler" data-toggle="collapse" data-target="#menu">
+        <nav class="navbar navbar-light">
+            <div class="navbar-logo">
+                <h1>
+                    <a href="/songs">
+                        <%= image_tag 'site-logo2.png', class: "navbar-logo-image" %>
+                    </a>
+                </h1>
+            </div>
+            <div class="navbar-sns">
+                <ul>
+                <li class="nav-sns"><a href="https://www.youtube.com/channel/UCWYYEIjZH2KsoNX9_RtOWjw" class="nav-link"><img src="/assets/youtube_image.png" class="nav-image"></a></li>
+                <li class="nav-sns"><a href="https://www.instagram.com/dayzmusi9/" class="nav-link"><img src="/assets/instagram_image.png" class="nav-image"></a></li>
+                <li class="nav-sns"><a href="https://twitter.com/dayzmusi9" class="nav-link"><img src="/assets/Twitter_image.png" class="nav-image"></a></li>
+            </ul>
+            </div>
+            <button class="navbar-toggler ml-1 p-1" data-toggle="collapse" data-target="#menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div id="menu" class="collapse navbar-collapse text-lefts">
+            
+            <div id="menu" class="collapse navbar-collapse text-right mt-3 mr-2">
                 <ul class="navbar-nav">
                     <% if user_signed_in? %>
-                    <li class="nav-item"><%= link_to 'ログアウト', destroy_user_session_path, method: :get, class: 'nav-link' %></li>
-                <% else %>
-                    <li class="nav-item"><%= link_to '新規作成', new_user_registration_path, class: 'nav-link' %></li>
-                    <li class="nav-item"><%= link_to 'ログイン', new_user_session_path, class: 'nav-link' %></li>
+                        <li class="nav-item"><%= link_to 'アカウント設定', edit_user_registration_path, method: :get, class: 'nav-link' %></li>
+                        <li class="nav-item"><%= link_to 'ログアウト', destroy_user_session_path, method: :get, class: 'nav-link' %></li>
+                    <% else %>
+                        <li class="nav-item"><%= link_to '新規作成', new_user_registration_path, class: 'nav-link' %></li>
+                        <li class="nav-item"><%= link_to 'ログイン', new_user_session_path, class: 'nav-link' %></li>
                     <% end %>
-                    <li class="nav-item"><a href="" class="nav-link">YouTube</a></li>
-                    <li class="nav-item"><a href="" class="nav-link">instagram</a></li>
-                    <li class="nav-item"><a href="" class="nav-link">Twitter</a></li>
                 </ul>
             </div>
         </nav>

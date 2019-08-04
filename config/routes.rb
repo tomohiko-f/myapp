@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   devise_for :users, controllers: {
   :registrations => 'users/registrations',
   sessions: 'users/sessions'
@@ -10,6 +11,5 @@ Rails.application.routes.draw do
     end
     resources :comments, only: [:create, :destroy]
   end
-  
-  root "songs#index"
+  root 'songs#index'
 end

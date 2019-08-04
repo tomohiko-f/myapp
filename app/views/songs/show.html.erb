@@ -1,40 +1,48 @@
 <main>
+    <%= flash[:alert] %>
     <div class="container">
-        <div class="row song-bg">
-            <div class="col-sm-4 text-center">
+        <div class="row song-content">
+            <div class="col-4 text-center">
                 <h2 class="song-title"><%= @song.song_title %></h2>
-                <div>
-                    <p>BPM : <%= @song.song_bpm %></p>
-                    <p><%= @song.song_time %></p>
-                    <p><%= @song.song_genre %></p>
-                    <p><%= button_to 'Download', download_song_path(@song.song_id), method: :get, class: 'btn btn-info w-75' %></p>
-                </div>
+                <p>BPM : <%= @song.song_bpm %></p>
+                <p><%= @song.song_time %></p>
+                <p><%= @song.song_genre %></p>
+                <p><%= button_to 'Download', download_song_path(@song.song_id), method: :get, class: 'download-button btn btn-info' %></p>
             </div>
-            <div class="col-sm-8 embed-responsive embed-responsive-4by3">
+            <div class="col-8 embed-responsive embed-responsive-4by3">
                 <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<%= @song.youtube_video_id %>" frameborder="0" 
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                 </iframe>
             </div>
         </div>
-        <div class="row comment">
-            <div class="col">
-                <% if user_signed_in? %>
-                    <%= form_for [@song, @comment] do |form| %>
-                        <p><%= form.text_field :content, class:'comment-box' %></p>
-                        <p><%= form.submit 'コメント' %></p>
-                    <% end %>
+    </div>
+    <div id="comments" class="comments-container">
+        <div class="row comments-header">
+            <h4>コメント<img src="/assets/comment.png"></h4>
+        </div>
+        <input name="user_signed_in" type="hidden" id="user_signed_in" value=<%= user_signed_in? %>>
+        <div class="row comments-box">
+            <%= form_for [@song, @comment] do |form| %>
+                <div class="comments-box-field"><span><%= form.text_field :content, id: "comment-field" %></span></div>
+                <div class="comments-box-button"><span><%= form.submit 'コメント', id: "submit", class: "btn btn-secondary" %></span></div>
+            <% end %>
+        </div>
+        <div class="row comments-list">
+            <div class="comment-list-field">
+                <% @comments.each do |comment| %>
+                    <ul class="comments-list-item">
+                        <li class="comments-list-user"><%= "@#{comment.user.username}" %></li>
+                        <li class="comments-list-text"><%= comment.content %></li>
+                    </ul>
                 <% end %>
             </div>
         </div>
-        <div class="row">
-            <h5>コメント</h5>
-            <div class="col">
-                <% @comments.each do |comment| %>
-                        <ul>
-                            <li><%= comment.content %></li>
-                        </ul>
-                <% end %>
-            </div>
+    </div>
+    <div class="pager">
+        <div class="row page-load-status">
+            <p class="infinite-scroll-request"><%= image_tag 'loading.gif' %></p>
+            <%= paginate @comments %>
+            <br>
         </div>
     </div>
 </main>

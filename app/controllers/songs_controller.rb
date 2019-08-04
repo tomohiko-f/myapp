@@ -5,12 +5,12 @@ class SongsController < ApplicationController
     before_action :find_song, only: [:show, :download]
 
     def index
-        @songs = Song.order(created_at: :desc)
+        @songs = Song.page(params[:page]).per(5).order('updated_at DESC')
     end
     
     def show
         @comment = Comment.new
-        @comments = @song.comments
+        @comments = @song.comments.page(params[:page]).per(10)
     end
     
     def download
@@ -29,6 +29,4 @@ class SongsController < ApplicationController
     def find_song
         @song = Song.find(params[:id])
     end
-
-    
 end

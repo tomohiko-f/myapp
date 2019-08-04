@@ -10,17 +10,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  def create
-    super
-    if resource
-      profile = Profile.new
-      profile.user_id = resource.id
-      profile.name = params[:profile][:name]
-      profile.save
-      # profile = params[:profile].permit(:name)
-      # Profile.create(profile)
-    end
-  end
+  # def create
+  #   super
+  # end
 
   # GET /resource/edit
   # def edit

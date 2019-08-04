@@ -4,11 +4,37 @@
 }
 
 .header h1 {
-    font-size: 40px;
+    font-size: 20px;
+}
+
+.navbar-logo {
+    float: left;
+    margin: -6px 5px;
+}
+
+.navbar-logo-image {
+    width: 60px;
+}
+
+.navbar-sns ul li{ 	
+    display: inline-block;
+}
+
+.navbar-sns {
+    margin-left: auto;
+}
+
+.nav-image {
+    margin: -4px;
+    width: 25px;
+}
+
+.nav-link {
+    font-size: 15px;
 }
 
 .main-header, .overlay:before {
-    background: image-url('dayz-image1.jpg') no-repeat;
+    background: image-url('dayz_image1.jpg') no-repeat;
     background-size: cover;
     background-position: 0 -21px;
 }
@@ -26,7 +52,6 @@
     position: relative;
     border-radius: 10px;
     color: white;
-    font-family: 'Lato';
     position: relative;
     text-align: center;
     z-index: 0;
@@ -37,25 +62,33 @@
         position: absolute;
         top: 0;
         left: 0;
-        filter: blur(60px);
+        filter: blur(20px);
         z-index: -1;
     }
 }
 
-.header-title {
-    font-size: 55px;
+@media screen and (min-width: 992px) { 
+    .header-title {
+        font-size: 4.5vw;
+    }
 }
 
-.row {
-    max-width: 1000px;
-    margin: 3% auto;
-    padding: 30px;
+@media screen and (max-width: 991.98px) { 
+    .header-title {
+        font-size: 4vw;
+    }
 }
 
-.song-bg {
+@media screen and (max-width: 576px) { 
+    .header-title {
+        font-size: 4vw;
+    }
+}
+
+.song-content {
     width: 100%;
     height: 100%;
-    background: image-url('dayz-image2.jpg');
+    background: image-url('dayz_image2.jpg');
     background-size: cover;
     border-radius: 20px;
     position: relative;
@@ -75,68 +108,163 @@
 
 .song-title {
     color: #fff;
-    font-size: 32px;
+    font-size: 2.5vw;
     padding-bottom: 8%;
 }
 
-.song-bg p {
+.song-content p {
     color: #fff;
-    font-size: 19px;
+    font-size: 1.6vw;
     line-height: 30px;
     padding-bottom: 2%;
 }
 
-.col-sm-4 .btn {
-    margin-top: 30%;
+.song-link {
+    margin-top: 10%;
 }
 
-.service-container {
-    background-color: #66717b;
-    background-size: cover;
+.download-button {
+    font-size: 1.5vw;
+    margin-top: 20%;
+    width: 70%;
+}
+
+.pagination {
+    margin: 20px 0;
+}
+
+
+// _section.htnl.erbレイアウト
+.container-fluid {
+    background-color: #e0d2d0;
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+.card-container {
+    text-align: center;
+}
+
+.card-deck {
+    display: inline-block;
+    margin-right: 10px;
+    min-width: 220px;
+    padding-top: 30px;
+}
+
+.card {
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    flex-direction: column;
+    margin-right: 10px;
+    width: 278px;
+    min-width: 278px;
+    height: 471px;
+    min-height: 471px;
+    max-width: inherit;
+    position: relative;
+}
+
+.card-header, .card-body {
+    border-radius: 5px;
+    padding: 46px 20px;
+    height: auto;
+    width: 100%;
+}
+
+.card-header {
+    background-color: #888b8e;
+    border-bottom: 1px solid rgba(0,0,0,.125);
     color: #fff;
-    padding-top: 2%;
-    padding-bottom: 2%;
 }
 
-.service-container .row {
-    margin: 2% auto;
-    padding: 30px;
+.card-body {
+    flex: 1 1 auto;
+}
+    
+.card-list {
+    text-align: left;
+    word-wrap:break-word;
 }
 
-.service-container .col-sm-6 {
-    background-color: #83919c;
+.card-list li {
+    list-style-type: none;
+    position: relative;
+    padding-left: 0.8em;
+}
+.card-list li:before {
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    background: #F48FB1;
+    content: "";
+    }
+    
+.card-list li span {
+    color: #3e3c3c;
+    font-size: 13px;
 }
 
-.service-title {
-    font-size: 35px;
-    margin-bottom: 5%; 
+
+// コメント欄レイアウト
+#comments > div {
+    margin: 0 auto;
 }
 
-.service-container h2 {
-    font-size: 20px;
-    padding-top: 5%;
-    padding-bottom: 2%;
-    text-decoration: underline;
+.comments-container {
+    font-family: Helvetica;
 }
 
-.service-container ul {
-    width: 110%;
-    margin: 10px;
+@media screen and (min-width: 992px) { 
+    #comment-field {
+        width: 650px;
+    }
 }
 
-.service-container li {
-    margin-bottom: 5px;
+@media screen and (max-width: 991.98px) { 
+    #comment-field {
+        width: 550px;
+    }
 }
 
-.comment p {
-    margin-bottom: 2%;
+@media screen and (max-width: 576px) { 
+    #comment-field {
+        width: 180%;
+    }
 }
 
-.comment-box {
-    width: 500px;
-    height: 30px;
-    font-size: 16px;
+#comment-field {
     border: none;
-    outline: 0;
     border-bottom: 1px solid #abb3b9;
+    font-size: 15px;
+    margin: 10px 0;
+    outline: 0;
+    height: 40px;
+}
+
+.comments-header img {
+    width: 21px;
+    margin-left: 4px;
+}
+
+.comments-box-button {
+    margin: 10px 0;
+}
+
+#comments .comments-list {
+    padding: 0 30px;
+}
+
+.comments-list-item {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.comments-list-text {
+    padding: 6px 18px 18px 18px;
 }
