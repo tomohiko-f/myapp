@@ -42,6 +42,7 @@ gem 'devise-i18n'
 gem 'kaminari'
 gem 'kaminari-bootstrap'
 gem 'jquery-turbolinks'
+gem 'activerecord-import'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

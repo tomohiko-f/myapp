@@ -1,3 +1,4 @@
+//_header.html.erbレイアウト
 .header {
     background-color: #080a0c3d;
     margin: 0;
@@ -33,10 +34,16 @@
     font-size: 15px;
 }
 
+
+//bodyのheaderレイアウト
 .main-header, .overlay:before {
     background: image-url('dayz_image1.jpg') no-repeat;
     background-size: cover;
     background-position: 0 -21px;
+}
+
+.header-title {
+    font-size: 4.5vw;
 }
 
 .main-header {
@@ -67,24 +74,8 @@
     }
 }
 
-@media screen and (min-width: 992px) { 
-    .header-title {
-        font-size: 4.5vw;
-    }
-}
 
-@media screen and (max-width: 991.98px) { 
-    .header-title {
-        font-size: 4vw;
-    }
-}
-
-@media screen and (max-width: 576px) { 
-    .header-title {
-        font-size: 4vw;
-    }
-}
-
+// song-contentsレイアウト
 .song-content {
     width: 100%;
     height: 100%;
@@ -108,7 +99,7 @@
 
 .song-title {
     color: #fff;
-    font-size: 2.5vw;
+    font-size: 2.7vw;
     padding-bottom: 8%;
 }
 
@@ -134,7 +125,34 @@
 }
 
 
-// _section.htnl.erbレイアウト
+// _section.html.erbレイアウト
+@media screen and (min-width: 992px) { 
+    .service-title h1, .card-header h3 {
+        font-size: 3.0vw;
+    }
+    .card-header h3 {
+        font-size: 2.2vw;
+    }
+}
+
+@media screen and (max-width: 991.98px) { 
+    .service-title h1 {
+        font-size: 3.5vw;
+    }
+    .card-header h3 {
+        font-size: 3.0vw;;
+    }
+}
+
+@media screen and (max-width: 576px) { 
+    .service-title h1 {
+        font-size: 5.0vw;
+    }
+    .card-header h3 {
+        font-size: 4.5vw;
+    }
+}
+
 .container-fluid {
     background-color: #e0d2d0;
     padding-top: 50px;
@@ -211,7 +229,7 @@
 }
 
 
-// コメント欄レイアウト
+// commentsレイアウト
 #comments > div {
     margin: 0 auto;
 }
@@ -222,13 +240,32 @@
 
 @media screen and (min-width: 992px) { 
     #comment-field {
-        width: 650px;
+        width: 950px;
     }
+    .comments-header h4 {
+        font-size: 22px;
+    }
+    .comments-header img {
+        width: 22px;
+    }
+    #comment-field, #submit, .comments-list-item {
+        font-size: 19px;
+    }
+    
 }
 
 @media screen and (max-width: 991.98px) { 
     #comment-field {
         width: 550px;
+    }
+    .comments-header h4 {
+        font-size: 20px;
+    }
+    .comments-header img {
+        width: 18px;
+    }
+    #comment-field, #submit, .comments-list-item {
+        font-size: 17px;
     }
 }
 
@@ -236,19 +273,25 @@
     #comment-field {
         width: 180%;
     }
+    .comments-header h4 {
+        font-size: 18px;
+    }
+    .comments-header img {
+        width: 15px;
+    }
+    #comment-field, #submit, .comments-list-item {
+        font-size: 14px;
+    }
 }
 
 #comment-field {
-    border: none;
-    border-bottom: 1px solid #abb3b9;
-    font-size: 15px;
+    border: 1px solid #abb3b9;
     margin: 10px 0;
     outline: 0;
-    height: 40px;
+    height: 90px;
 }
 
 .comments-header img {
-    width: 21px;
     margin-left: 4px;
 }
 

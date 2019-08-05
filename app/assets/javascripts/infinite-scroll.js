@@ -1,4 +1,5 @@
 $(function(){
+    
     $('#comments').infiniteScroll({
     
     append: '.comments-list',  
@@ -7,6 +8,5 @@ $(function(){
     prefill: true,
     history: false,
     hideNav: '.pagination',
-    status: '.page-load-status',
     }); 
 });

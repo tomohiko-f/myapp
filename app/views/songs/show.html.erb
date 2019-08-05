@@ -23,7 +23,7 @@
         <input name="user_signed_in" type="hidden" id="user_signed_in" value=<%= user_signed_in? %>>
         <div class="row comments-box">
             <%= form_for [@song, @comment] do |form| %>
-                <div class="comments-box-field"><span><%= form.text_field :content, id: "comment-field" %></span></div>
+                <div class="comments-box-field"><span><%= form.text_area :content, id: "comment-field" %></span></div>
                 <div class="comments-box-button"><span><%= form.submit 'コメント', id: "submit", class: "btn btn-secondary" %></span></div>
             <% end %>
         </div>
@@ -38,11 +38,5 @@
             </div>
         </div>
     </div>
-    <div class="pager">
-        <div class="row page-load-status">
-            <p class="infinite-scroll-request"><%= image_tag 'loading.gif' %></p>
-            <%= paginate @comments %>
-            <br>
-        </div>
-    </div>
+    <%= paginate @comments %>
 </main>
