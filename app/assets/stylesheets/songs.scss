@@ -236,11 +236,14 @@
 
 .comments-container {
     font-family: Helvetica;
+    background-color: #f7f7f7;
+    margin-top: 50px;
+    padding-bottom: 30px;
 }
 
 @media screen and (min-width: 992px) { 
-    #comment-field {
-        width: 950px;
+    #comment-field, .comments-list-item {
+        width: 80vw;
     }
     .comments-header h4 {
         font-size: 22px;
@@ -255,8 +258,8 @@
 }
 
 @media screen and (max-width: 991.98px) { 
-    #comment-field {
-        width: 550px;
+    #comment-field, .comments-list-item {
+        width: 86vw;
     }
     .comments-header h4 {
         font-size: 20px;
@@ -270,8 +273,8 @@
 }
 
 @media screen and (max-width: 576px) { 
-    #comment-field {
-        width: 180%;
+    #comment-field, .comments-list-item {
+        width: 86vw;
     }
     .comments-header h4 {
         font-size: 18px;
@@ -285,7 +288,7 @@
 }
 
 #comment-field {
-    border: 1px solid #abb3b9;
+    border: 1px solid #a4aab7;
     margin: 10px 0;
     outline: 0;
     height: 90px;
@@ -304,10 +307,11 @@
 }
 
 .comments-list-item {
+    border-bottom: 1px solid #a4aab7;
     list-style: none;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .comments-list-text {
-    padding: 6px 18px 18px 18px;
+    padding: 0 18px 30px 18px;
 }
