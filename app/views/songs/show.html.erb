@@ -18,7 +18,7 @@
     </div>
     <div id="comments" class="comments-container">
         <div class="row comments-header">
-            <h4>コメント<img src="/assets/comment.png"></h4>
+            <h4>コメント<img src="<%= asset_path "comment.png" %>"></h4>
         </div>
         <input name="user_signed_in" type="hidden" id="user_signed_in" value=<%= user_signed_in? %>>
         <div class="row comments-box">
