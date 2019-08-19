@@ -1,4 +1,4 @@
-//_header.html.erbレイアウト
+// _header.html.erbレイアウト
 .header {
     background-color: #080a0c3d;
     margin: 0;
@@ -10,7 +10,7 @@
 
 .navbar-logo {
     float: left;
-    margin: -6px 5px;
+    margin: -8px -9px;
 }
 
 .navbar-logo-image {
@@ -35,7 +35,7 @@
 }
 
 
-//bodyのheaderレイアウト
+// bodyのheaderレイアウト
 .main-header, .overlay:before {
     background: image-url('dayz_image1.jpg') no-repeat;
     background-size: cover;

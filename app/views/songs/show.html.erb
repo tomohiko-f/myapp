@@ -7,7 +7,7 @@
                 <p>BPM : <%= @song.song_bpm %></p>
                 <p><%= @song.song_time %></p>
                 <p><%= @song.song_genre %></p>
-                <p><%= button_to 'Download', download_song_path(@song.song_id), method: :get, class: 'download-button btn btn-info' %></p>
+                <p><%= button_to 'Download', download_song_path(@song.id), method: :get, class: 'download-button btn btn-info' %></p>
             </div>
             <div class="col-8 embed-responsive embed-responsive-4by3">
                 <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<%= @song.youtube_video_id %>" frameborder="0" 
