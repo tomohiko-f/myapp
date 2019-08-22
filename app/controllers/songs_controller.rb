@@ -20,9 +20,10 @@ class SongsController < ApplicationController
         
         client = Aws::S3::Client.new(region: region)
         data = client.get_object(:bucket => bucket, :key => key).body
+        file_name = "#{key}"
         type = "audio/mpeg"
         
-        send_data data.read, :disposition => "attachment", :filename => "#{key}", :type => type
+        send_data data.read, :disposition => "attachment", :filename => file_name, :type => type
     end
     
     def find_song
