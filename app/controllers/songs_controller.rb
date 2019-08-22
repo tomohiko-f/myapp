@@ -14,8 +14,15 @@ class SongsController < ApplicationController
     end
     
     def download
-        data = open(URI.encode("https://#{ENV['AWS_S3_DEV_BUCKET']}/#{@song.song_title}.mp3"))
-        send_data data.read, :disposition => "attachment", :filename => "#{@song.song_title}.mp3", :type => "audio/mpeg"
+        region = ENV['S3_REGION']
+        bucket = ENV['S3_BUCKET']
+        key = "#{@song.song_title}.mp3"
+        
+        client = Aws::S3::Client.new(region: region)
+        data = client.get_object(:bucket => bucket, :key => key).body
+        type = "audio/mpeg"
+        
+        send_data data.read, :disposition => "attachment", :filename => "#{key}", :type => type
     end
     
     def find_song
