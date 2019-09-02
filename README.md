@@ -51,7 +51,8 @@ e-mail：test@dayz.com
 password：password  
 ※観覧用としてお使いください。 
 
-# 今度の追加したい機能
+# 改善点/追加したい機能
+* より現場を意識し、CircleCI+ECS+ECR環境下で「Dockerを継続的にデプロイ」や「CircleCIとGItHubを連携させた自動テスト」を可能にする
 * Twitterなどの外部サービスとの連携によるログイン機能の実装
 * S3へ音源のアップロード機能の追加
 * メール問い合わせ機能の追加
